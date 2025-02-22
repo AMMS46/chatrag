@@ -15,8 +15,8 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 llm = GoogleGemini(GOOGLE_API_KEY)
 
-df = SmartDataframe("C:/ragapi/employee.csv", config={"llm": llm})
-response = df.chat("create a bar chart to show who got the highest salary")
+#df = SmartDataframe("C:/ragapi/employee.csv", config={"llm": llm})
+#response = df.chat("create a bar chart to show who got the highest salary")
 #print(response)
 
 app = FastAPI()
