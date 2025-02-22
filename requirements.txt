@@ -2,3 +2,4 @@ pandasai
 langchain-google-genai
 fastapi
 python-multipart
+uvicorn
