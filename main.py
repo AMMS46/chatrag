@@ -5,11 +5,15 @@ from pandasai import SmartDataframe
 from pandasai.llm.google_gemini import GoogleGemini
 import pandas as pd
 from io import StringIO
+import os
+from dotenv import load_dotenv
 
-g_api= "AIzaSyDVuqEwMvxGYjaQjv7LhRAsTcLB3M20pUg"
 
+load_dotenv()
 
-llm = GoogleGemini(g_api)
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+llm = GoogleGemini(GOOGLE_API_KEY)
 
 df = SmartDataframe("C:/ragapi/employee.csv", config={"llm": llm})
 response = df.chat("create a bar chart to show who got the highest salary")
